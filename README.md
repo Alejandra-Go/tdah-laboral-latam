@@ -11,9 +11,9 @@ Este proyecto busca analizar datos relacionados con el TDAH (Trastorno por Défi
 - Generar visualizaciones y conclusiones útiles.
 
 ## Estado del Proyecto
-🔄 Etapa actual: **Recopilación y limpieza de datos**
+🔄 Etapa actual: **Visualización de datos**
 
-## Herramientas previstas
+## Herramientas
 - Python (pandas, matplotlib, seaborn)
-- Jupyter Notebooks
-- Git y GitHub
+- Google Colab
+- GitHub
