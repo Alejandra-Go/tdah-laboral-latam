@@ -126,9 +126,7 @@ En este segundo proyecto se aplican:
 
 El proyecto SQL se encuentra documentado en un repositorio independiente:
 
-**`sql-analisis-tdah`**
-
-> El enlace al repositorio SQL se agregará aquí una vez publicado.
+[SQL análisis TDAH: PostgreSQL y SQL](https://github.com/Alejandra-Go/sql-analisis-tdah)
 
 ---
 
