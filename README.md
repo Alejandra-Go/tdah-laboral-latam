@@ -1,164 +1,113 @@
-# TDAH laboral LATAM: análisis de datos con Python
+# TDAH laboral LATAM: análisis exploratorio de datos con Python
 
-Proyecto de análisis exploratorio de datos sobre **TDAH (Trastorno por Déficit de Atención e Hiperactividad) y situación laboral en personas adultas**, desarrollado con Python a partir de datos recopilados mediante una encuesta en Microsoft Forms.
+Análisis exploratorio de la relación entre el TDAH y la situación laboral a partir de una encuesta realizada a 64 participantes de Latinoamérica.
 
-El proyecto forma parte de mi portafolio de análisis de datos y tiene como objetivo demostrar un flujo práctico de **extracción, limpieza, transformación, análisis exploratorio y visualización de datos**.
+El proyecto abarca el proceso completo de preparación y análisis de los datos: anonimización, Data Profiling, limpieza, transformación, validación de calidad, análisis exploratorio y visualización de resultados con Python.
 
-> **Nota sobre la muestra:** la encuesta cuenta con 64 participantes de México, Argentina y Guatemala, con una participación mayoritaria de México. Por esta razón, los resultados son descriptivos de la muestra y no pretenden ser representativos de toda la población latinoamericana.
+> **Nota:** Los resultados corresponden únicamente a la muestra analizada y no son representativos de toda la población latinoamericana.
 
----
+## Objetivo
 
-## Objetivos
+Explorar la relación entre variables relacionadas con el TDAH y la situación laboral en una muestra de personas adultas de Latinoamérica, identificando patrones descriptivos relacionados con diagnóstico, tipo de TDAH, situación laboral, dificultades experimentadas y apoyos laborales.
 
-- Recopilar datos mediante una encuesta propia.
-- Preparar y limpiar los datos para su análisis.
-- Transformar variables para facilitar su procesamiento.
-- Realizar un análisis exploratorio de datos (EDA).
-- Generar visualizaciones para identificar patrones y tendencias.
-- Preparar los datos para su posterior análisis mediante otras herramientas, como SQL.
+## Preguntas de análisis
 
----
+1. ¿Qué proporción de participantes reporta diagnóstico formal de TDAH?
+2. ¿Qué tipos de TDAH aparecen con mayor frecuencia?
+3. ¿Cuál es la distribución de la situación laboral?
+4. ¿Qué dificultades laborales se reportan con mayor frecuencia?
+5. ¿Qué proporción recibe apoyos o adaptaciones laborales?
+6. ¿Qué patrones descriptivos se observan al relacionar el diagnóstico y el tipo de TDAH con la situación laboral, las dificultades y los apoyos laborales?
+
+## Dataset
+
+Los datos provienen de una encuesta propia realizada mediante Microsoft Forms.
+
+- **Participantes:** 64
+- **Países representados:** México, Argentina y Guatemala
+- **Variables originales:** 17
+- **Variables después de la anonimización:** 10
+- **Tipo de información:** datos demográficos, información relacionada con TDAH, situación laboral, dificultades laborales y apoyos o adaptaciones.
+
+La muestra presenta una fuerte concentración geográfica en México (93.8 %), por lo que los resultados no deben interpretarse como representativos de Latinoamérica.
+
+### Privacidad de los datos
+
+Por motivos de privacidad, el archivo original con las respuestas de los participantes **no se publica en este repositorio**.
+
+Antes del análisis se eliminaron identificadores directos, metadatos de la encuesta y respuestas que pudieran contener información personal. Las variables originales necesarias para el análisis se conservaron siempre que fue posible para mantener la trazabilidad de las transformaciones realizadas.
+
+## Metodología
+
+El análisis se desarrolló en las siguientes etapas:
+
+1. **Extracción de datos:** carga del archivo original en formato Excel.
+2. **Estandarización y anonimización:** eliminación de información identificable y conservación de las variables necesarias para el análisis.
+3. **Data Profiling:** revisión de dimensiones, tipos de datos, valores faltantes, duplicados y cardinalidad.
+4. **Limpieza y preparación:** normalización de variables categóricas, conversión de variables numéricas y tratamiento de respuestas no estructuradas.
+5. **Ingeniería de variables:** creación de variables derivadas para facilitar el análisis sin modificar las respuestas originales.
+6. **Codificación temática:** clasificación exploratoria de las dificultades laborales reportadas mediante respuestas abiertas.
+7. **Validación de calidad:** revisión de valores faltantes, tipos de datos y consistencia de las variables transformadas.
+8. **Análisis exploratorio de datos (EDA):** análisis univariado y exploración descriptiva de relaciones entre variables.
+9. **Visualización:** elaboración de gráficas para comunicar los principales patrones encontrados.
 
 ## Tecnologías utilizadas
 
 - Python
 - pandas
-- matplotlib
-- seaborn
+- Matplotlib
 - Google Colab
+- Microsoft Excel
 - Microsoft Forms
-- GitHub
 
----
+## Principales hallazgos
 
-## Proceso ETL
+- **60.9 %** de los participantes reportó contar con un diagnóstico formal de TDAH.
+- **79.7 %** fue clasificado dentro del grupo que se encontraba trabajando al momento de responder la encuesta.
+- **90.6 %** reportó haber experimentado alguna dificultad laboral.
+- Entre las 37 respuestas con suficiente detalle para realizar una clasificación temática, las dificultades identificadas con mayor frecuencia fueron:
+  - gestión del tiempo y puntualidad: **32.4 %**
+  - atención y concentración: **24.3 %**
+  - organización y planificación: **21.6 %**
+- **43.2 %** de las 37 respuestas con detalle temático presentó dificultades correspondientes a dos o más categorías.
+- Solo **4.7 %** de los participantes reportó recibir algún apoyo o adaptación laboral.
 
-El proyecto sigue un proceso de **ETL (Extract, Transform, Load)** para preparar los datos antes del análisis.
+Los análisis entre variables mostraron diferencias descriptivas entre algunos grupos; sin embargo, debido al tamaño reducido y desigual de las categorías, **no es posible establecer relaciones causales ni concluir que un diagnóstico o tipo determinado de TDAH esté asociado con una mayor o menor probabilidad de encontrarse trabajando**.
 
-### 1. Extracción (Extract)
+## Limitaciones
 
-Los datos fueron recopilados mediante una encuesta creada en **Microsoft Forms** sobre TDAH y situación laboral.
+El análisis presenta varias limitaciones que deben considerarse al interpretar los resultados:
 
-Las respuestas obtenidas se exportaron para posteriormente ser procesadas con Python en Google Colab.
+- La muestra está conformada por únicamente 64 participantes.
+- Existe una fuerte concentración geográfica en México.
+- La información fue autorreportada.
+- Algunos grupos utilizados en las comparaciones contienen pocos participantes.
+- La clasificación temática de las dificultades laborales se realizó de manera exploratoria a partir de respuestas abiertas y no corresponde a una escala clínica validada.
 
-### 2. Transformación (Transform)
+Por estas razones, los resultados permiten identificar patrones dentro de la muestra, pero no pueden generalizarse a toda la población adulta con TDAH en Latinoamérica.
 
-La preparación y limpieza de los datos se realizó utilizando **Python y pandas**.
+## Trabajo futuro
 
-Entre las tareas realizadas se encuentran:
+Como continuación del proyecto sería recomendable:
 
-- Revisión inicial de la estructura del dataset.
-- Identificación y tratamiento de valores nulos.
-- Revisión de registros duplicados.
-- Revisión y adecuación de tipos de datos.
-- Estandarización y preparación de variables para el análisis.
-- Anonimización de los datos para evitar utilizar información personal identificable.
-- Creación de datasets derivados para facilitar análisis posteriores.
-
-Después de la limpieza y transformación, los datos quedaron preparados para realizar el análisis exploratorio y las visualizaciones.
-
-### 3. Carga (Load)
-
-Los datos procesados se utilizaron directamente en el notebook para realizar el **análisis exploratorio de datos (EDA)** y generar visualizaciones.
-
-Adicionalmente, a partir de los datos preparados se generaron tres datasets estructurados:
-
-- `participantes.csv`
-- `diagnostico_tdah.csv`
-- `situacion_laboral.csv`
-
-Estos datasets fueron posteriormente utilizados en un proyecto independiente de **PostgreSQL y SQL**, permitiendo continuar el análisis mediante un modelo de datos relacional.
-
----
-
-## Análisis exploratorio de datos (EDA)
-
-El análisis realizado en Python permite explorar características de la muestra relacionadas con:
-
-- Perfil general de los participantes.
-- Diagnóstico de TDAH.
-- Tipo de TDAH reportado.
-- Edad de diagnóstico.
-- Situación laboral.
-- Dificultades experimentadas en el entorno laboral.
-- Apoyos o adaptaciones laborales.
-
-Las visualizaciones permiten identificar patrones dentro de la muestra y facilitar la interpretación de los resultados.
-
----
+- ampliar el tamaño y diversidad geográfica de la muestra;
+- incorporar variables relacionadas con las condiciones laborales;
+- utilizar instrumentos estandarizados para evaluar las dificultades asociadas con el TDAH;
+- profundizar en el conocimiento, acceso y utilización de apoyos y adaptaciones laborales;
+- explorar las estrategias utilizadas para gestionar dificultades relacionadas con atención, organización y gestión del tiempo.
 
 ## Notebook
 
-El análisis completo se encuentra disponible en:
+El análisis completo se encuentra en:
 
-[`TDAH_LATAM_project_con_Python.ipynb`](TDAH_LATAM_project_con_Python.ipynb)
+`tdah_laboral_latam_eda.ipynb`
 
-El notebook contiene el procesamiento de los datos, análisis exploratorio y visualizaciones desarrolladas con Python.
-
----
-
-## Estructura del repositorio
-
-```text
-TDAH-laboral-LATAM/
-│
-├── .gitignore
-├── README.md
-└── TDAH_LATAM_project_con_Python.ipynb
-
-```
-
----
-
-## Continuación del proyecto: análisis con SQL
-
-Como extensión de este proyecto, los datos procesados fueron estructurados en una base de datos relacional utilizando **PostgreSQL**.
-
-En este segundo proyecto se aplican:
-
-- Diseño de tablas relacionales.
-- Claves primarias y foráneas.
-- Consultas SQL.
-- Filtros y agregaciones.
-- `GROUP BY`.
-- `JOIN`.
-- Subconsultas.
-
-El proyecto SQL se encuentra documentado en un repositorio independiente:
-
-[SQL análisis TDAH: PostgreSQL y SQL](https://github.com/Alejandra-Go/sql-analisis-tdah)
-
----
-
-## Consideraciones y limitaciones
-
-- La muestra contiene 64 participantes.
-- La mayoría de las respuestas provienen de México.
-- Los resultados corresponden únicamente a las personas participantes de la encuesta.
-- El análisis es exploratorio y descriptivo.
-- Los resultados no deben interpretarse como representativos de toda la población latinoamericana ni como conclusiones clínicas sobre el TDAH.
-
----
-
-## Habilidades demostradas
-
-Este proyecto demuestra experiencia práctica en:
-
-- Extracción y preparación de datos.
-- Python para análisis de datos.
-- Manipulación de datos con pandas.
-- Limpieza y transformación de datasets.
-- Tratamiento de valores nulos y duplicados.
-- Análisis exploratorio de datos (EDA).
-- Visualización de datos con matplotlib y seaborn.
-- Documentación de un proceso ETL.
-- Preparación de datos para análisis posterior con SQL.
-- Git y GitHub para documentación de proyectos.
-
----
+El notebook documenta las decisiones de limpieza y transformación, las validaciones realizadas, el análisis exploratorio, las visualizaciones y la interpretación de los resultados.
 
 ## Autora
 
 **Alejandra González Madrid**
 
-Estudiante de Ingeniería en Sistemas Computacionales con interés en análisis de datos, SQL, automatización y Business Intelligence.
+Estudiante de Ingeniería en Sistemas Computacionales con interés en análisis de datos, calidad de datos y automatización.
+
+Proyecto desarrollado como parte de mi portafolio profesional.
