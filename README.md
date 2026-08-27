@@ -74,6 +74,26 @@ El análisis se desarrolló en las siguientes etapas:
 
 Los análisis entre variables mostraron diferencias descriptivas entre algunos grupos; sin embargo, debido al tamaño reducido y desigual de las categorías, **no es posible establecer relaciones causales ni concluir que un diagnóstico o tipo determinado de TDAH esté asociado con una mayor o menor probabilidad de encontrarse trabajando**.
 
+## Visualizaciones destacadas
+
+### Principales dificultades laborales
+
+Entre las 37 respuestas que proporcionaron suficiente detalle para realizar una clasificación temática, las dificultades identificadas con mayor frecuencia estuvieron relacionadas con la gestión del tiempo y puntualidad, la atención y concentración, y la organización y planificación.
+
+![Principales dificultades laborales](images/principales_dificultades_laborales.png)
+
+### Situación laboral según diagnóstico formal de TDAH
+
+La comparación permite explorar descriptivamente la situación laboral según la presencia de un diagnóstico formal de TDAH. Debido al tamaño reducido y desigual de los grupos, las diferencias observadas deben interpretarse con cautela y no permiten establecer una asociación causal.
+
+![Situación laboral según diagnóstico formal de TDAH](images/situacion_laboral_segun_diagnostico.png)
+
+### Apoyos laborales
+
+Solo una pequeña proporción de la muestra reportó recibir algún apoyo o adaptación laboral. Este resultado permite identificar una posible línea de análisis futuro relacionada con el conocimiento, acceso y utilización de apoyos laborales entre adultos con TDAH.
+
+![Apoyos laborales](images/apoyos_laborales.png)
+
 ## Limitaciones
 
 El análisis presenta varias limitaciones que deben considerarse al interpretar los resultados:
